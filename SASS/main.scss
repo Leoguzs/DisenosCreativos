@@ -1,6 +1,6 @@
 @import './resets';
 @import './variables';
-@import './aestehic'
+@import './aestehic';
 
 @function weight($weight-name) {   /* esto es para no usar el map-get a cada rato */
     @return map-get($font-weights, $weight-name);  /* las funciones nos permiten computar y regresar valores */
