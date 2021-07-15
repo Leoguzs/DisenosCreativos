@@ -1,0 +1,69 @@
+/*resets*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*para que no se descuadre el contenido*/
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/*Variables*/
+.lighten {
+  background-color: #fff;
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #8ccf8c;
+  padding: .5rem;
+  gap: 3rem;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.lorem-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 800px) {
+  .lorem-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,60 @@
+/*resets*/
+@import './resets';
+@import './variables';
+
+@mixin flexCenter ($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: $direction;  
+}
+@mixin theme ($light-theme: true) {
+    @if $light-theme {
+        background: lighten($background-color, 100%);
+        color: darken($background-color-dark, 100%);
+    }
+}
+@mixin mobile  {
+    @media (max-width:$mobile) {
+        @content; 
+    }
+}
+@mixin mobile {   /*tratar de hacer barra de navegacion con columanas en mixin para un responsive design*/
+    
+}
+.lighten {
+    background-color: $background-color;
+    font-weight: map-get($font-weights, medium);
+}
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: center;
+    background-color: $nav-background;
+    padding: .5rem;
+    gap: 3rem;
+
+
+   a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: map-get($font-weights, medium);
+        font-size: 22px;  
+        
+    }
+   
+}
+
+.lorem-row {
+@include flexCenter(row);
+@include mobile{
+    flex-direction: column;
+}
+}
+
+.lighten{
+    @include theme($light-theme: false);
+}

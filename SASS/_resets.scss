@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;   /*para que no se descuadre el contenido*/
+    margin: 0;
+    padding: 0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
