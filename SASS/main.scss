@@ -1,60 +1,65 @@
-/*resets*/
 @import './resets';
 @import './variables';
+@import './aestehic'
 
-@mixin flexCenter ($direction) {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: $direction;  
+@function weight($weight-name) {   /* esto es para no usar el map-get a cada rato */
+    @return map-get($font-weights, $weight-name);  /* las funciones nos permiten computar y regresar valores */
 }
-@mixin theme ($light-theme: true) {
-    @if $light-theme {
-        background: lighten($background-color, 100%);
-        color: darken($background-color-dark, 100%);
+/* Aestethic section */
+@function trinity($color-name) {
+    @return map-get($color-trinity, $color-name);
+}
+
+@mixin flexCenter ($direction) { /* un mixin se incluye con un "@include" t el nombre del mixin */
+    display: flex;   /* los mixin y las funciones se hacen cuando vas a reusar código */
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme ($light-theme: true){
+    @if $light-theme  {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
     }
 }
-@mixin mobile  {
-    @media (max-width:$mobile) {
+
+@mixin mobile {
+    @media (max-width: $mobile) {
         @content; 
     }
 }
-@mixin mobile {   /*tratar de hacer barra de navegacion con columanas en mixin para un responsive design*/
-    
-}
-.lighten {
-    background-color: $background-color;
-    font-weight: map-get($font-weights, medium);
-}
-h1 {
-    text-align: center;
-    margin: 2rem 0;
-}
-.nav-container {
-    display: flex;
-    justify-content: center;
-    background-color: $nav-background;
-    padding: .5rem;
-    gap: 3rem;
 
+body{
+    background: $primary-color;
+    color: $text-color;
+    margin-top: 2rem;
+}
 
-   a {
-        text-decoration: none;
-        color: $text-color;
-        font-weight: map-get($font-weights, medium);
-        font-size: 22px;  
-        
+.main {
+    @include flexCenter (row);
+    width: 80%;
+    margin: 0 auto;
+    #{&}__paragraph1 { /*intrapolación, para que le dé a todos los que están dentro*/
+        font-weight:weight(regular); /* se usó la función weight */
+        &:hover {
+            color: pink;
+        }
     }
-   
+
+    #{&}__paragraph2 {
+        @extend .main__paragraph1;
+        &:hover {
+            color:darkseagreen;
+        }
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
-.lorem-row {
-@include flexCenter(row);
-@include mobile{
-    flex-direction: column;
-}
+.light {
+    @include  theme ($light-theme: false);
 }
 
-.lighten{
-    @include theme($light-theme: false);
-}

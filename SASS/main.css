@@ -1,4 +1,4 @@
-/*resets*/
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -13,39 +13,19 @@
 }
 
 /*Variables*/
-.lighten {
-  background-color: #fff;
-  font-weight: 500;
-}
-
-h1 {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.nav-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #8ccf8c;
-  padding: .5rem;
-  gap: 3rem;
-}
-
-.nav-container a {
-  text-decoration: none;
+/* Aestethic section */
+body {
+  background: #272727;
   color: #fff;
-  font-weight: 500;
-  font-size: 22px;
+  margin-top: 2rem;
 }
 
-.lorem-row {
+.main {
+  /* un mixin se incluye con un "@include" t el nombre del mixin */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* los mixin y las funciones se hacen cuando vas a reusar código */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -56,14 +36,64 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
 }
 
-@media (max-width: 800px) {
-  .lorem-row {
+.main .main__paragraph1, .main .main__paragraph2 {
+  /*intrapolación, para que le dé a todos los que están dentro*/
+  font-weight: 400;
+  /* se usó la función weight */
+}
+
+.main .main__paragraph1:hover, .main .main__paragraph2:hover {
+  color: pink;
+}
+
+.main .main__paragraph2:hover {
+  color: darkseagreen;
+}
+
+@media (max-width: 768px) {
+  .main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+/* Aestethic section */
+.aestethic-container {
+  /* un mixin se incluye con un "@include" t el nombre del mixin */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* los mixin y las funciones se hacen cuando vas a reusar código */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.aestethic-container .aestethic__item1, .aestethic-container .aestethic__item2, .aestethic-container .aestethic__item3 {
+  color: #fff;
+  margin-top: 2rem;
+  height: 3rem;
+  background: #ee8484;
+}
+
+.aestethic-container .aestethic__item2 {
+  background: #acc8ac;
+}
+
+.aestethic-container .aestethic__item3 {
+  background: #f8cfd6;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,16 @@
 /*Variables*/
-$background-color: #fff;
+$primary-color:#272727;
 $background-color-dark: #474747;
 $text-color: #fff;
 $nav-background: rgb(140, 207, 140); 
+$color-trinity: (
+    "aestethic1": rgb(238, 132, 132),
+    "aestethic2": rgb(172, 200, 172),
+    "aestethic3": rgb(248, 207, 214)
+);
 $font-weights: (
     "regular": 400,
     "medium": 500,
     "bold":700
 );
-$mobile: 800px;
+$mobile: 768px;
