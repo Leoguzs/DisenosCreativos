@@ -1,6 +1,5 @@
 @import './resets';
 @import './variables';
-@import './aestehic';
 
 @function weight($weight-name) {   /* esto es para no usar el map-get a cada rato */
     @return map-get($font-weights, $weight-name);  /* las funciones nos permiten computar y regresar valores */
@@ -60,6 +59,29 @@ body{
 }
 
 .light {
-    @include  theme ($light-theme: false);
+    @include  theme ($light-theme: true);
 }
 
+/* Aestethic section */
+
+.aestethic-container {
+    @include flexCenter(column);
+    
+    
+     .aestethic__item1 {
+         color: $text-color;
+         margin-top: 2rem;
+         height: 3rem;
+         background: trinity(aestethic1);
+     }
+    .aestethic__item2 {
+        @extend .aestethic__item1;
+        background: trinity(aestethic2); 
+    } 
+    .aestethic__item3 {
+        @extend .aestethic__item1;
+        background: trinity(aestethic3);
+    
+    }
+     
+    } 
