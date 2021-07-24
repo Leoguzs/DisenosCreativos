@@ -60,10 +60,13 @@ body{
             color: trinity(aestethic2);
         }
     }
+    @include mobile {
+        @include flexCenter(column);
+    }
 }
 
 .cont-exper {
-    background-color: #222;
+    background-color:$background-color-dark;
     padding-bottom: 3rem;
     h1 {
       color: #fff;
@@ -153,3 +156,5 @@ body{
     }
      
     } 
+
+
